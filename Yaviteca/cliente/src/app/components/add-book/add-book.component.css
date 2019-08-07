@@ -1,0 +1,27 @@
+.super-container{
+    position: absolute;
+    top: 25%;
+}
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+  
+.example-container {
+    width: 45%;
+}
+
+.left-container{
+    position: absolute;
+    left: 2%;
+}
+
+.right-container{
+    position: absolute;
+    right: 2%;
+}
+.container{
+    position: absolute;
+    bottom: 35%;
+    right: 0px;
+}

@@ -1,0 +1,43 @@
+<div style="text-align:center">
+    <h1>Modificar este libro</h1>
+</div> 
+<div class="example-container">
+    <mat-form-field>
+        <input matInput placeholder="Nombre del libro" [value]="book.nombre">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Editorial" [value]="book.editorial">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Nombre del autor" [value]="book.autor">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Fecha de publicación(año/mes/día)" [value]="book.fecha_publicacion | date: 'yyyy-MM-dd'">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Género" [value]="book.genero">
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>Estados de Conservacion</mat-label>
+        <mat-select [(value)]="conservacionSelect">
+            <mat-option *ngFor="let estado of estadosConservacion" [value]="estado.id_estado_conservacion">
+                {{estado.nombre_estado_conservacion}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <button class="btn btn-primary" (click)="editarLibro(book.id_libro)">Aceptar</button>
+      </div>
+      <div class="col-sm">
+        <button class="btn btn-primary" (click)="cancelarEdicion()">Cancelar</button>
+      </div>
+    </div>
+</div>

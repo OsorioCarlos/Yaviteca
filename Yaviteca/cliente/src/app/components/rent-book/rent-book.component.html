@@ -1,0 +1,38 @@
+<div style="text-align:center">
+    <h1>ALQUILER DE LIBROS</h1>
+</div>
+
+<div class="example-container">
+    <div class="example-container">
+        <mat-form-field>
+            <input matInput placeholder="Nombre Usuario">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Fecha de alquiler (día actual)" value="{{presente | date: 'yyyy-MM-dd' }}">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Fecha máxima de devolución (30 días normalmente)" value="{{futuro | date: 'yyyy-MM-dd' }}">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-select placeholder="Nombre del libro" [(value)]="libroSelect">
+                <mat-option *ngFor="let libro of libros" [value]="libro.id_libro">
+                    {{libro.nombre}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>  
+<div class="container">
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm">
+            <button class="btn btn-primary" (click)="alquilarLibro()">Alquilar</button>
+        </div>
+        <div class="col-sm">
+            <button class="btn btn-primary" routerLink="/reservations">Ver Libros Alquilados</button>
+        </div>
+    </div>
+</div>

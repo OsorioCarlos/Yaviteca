@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+<button mat-button [matMenuTriggerFor]="menu">ADMINISTRADOR</button>
+  <div id="wrapper">
+    <mat-menu #menu="matMenu" class="navbar navbar-expand-lg navbar-light bg-dark">
+      <button mat-menu-item routerLink="/inventory">Inventario</button>
+      <button mat-menu-item routerLink="/add-book">Registro de libros</button>
+      <button mat-menu-item routerLink="/reservations">Libros prestados</button>
+      <button mat-menu-item routerLink="/rent-book">Alquilar Libros</button>
+      <button mat-menu-item routerLink="/generar-pdf">PDF</button>
+    </mat-menu>
+  </div>
+</nav>

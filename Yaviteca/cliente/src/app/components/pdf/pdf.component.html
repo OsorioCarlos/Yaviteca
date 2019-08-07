@@ -1,0 +1,23 @@
+<h1 style="text-align:center">Visualizador de PDF</h1>
+<hr>
+
+<h2 style="text-align:center">Instituto Superior Tecnológico de Turismo y Patrimonio "Yavirac"</h2>
+<h3 style="text-align:center">Registro de control de inventario</h3>
+<div class="example-container">
+    <div class="example-container">
+        <mat-form-field>
+            <input matInput placeholder="Fecha desde:" value="{{pasado | date: 'yyyy-MM-dd' }}">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Fech hasta:" value="{{presente | date: 'yyyy-MM-dd' }}">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Elaborado">
+        </mat-form-field>
+    </div>
+</div>
+<div style="text-align:center">
+    <button class="btn btn-primary" (click)="generarPDF()">Descargar PDF</button>
+</div>

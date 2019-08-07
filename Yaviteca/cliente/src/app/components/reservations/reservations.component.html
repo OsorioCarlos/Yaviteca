@@ -1,0 +1,42 @@
+<h1 style="text-align:center">Libros Prestados</h1>
+<div class="example-container mat-elevation-z8">
+  <table mat-table [dataSource]="alquileres">
+    
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let alquiler"> {{alquiler.nombre_usuario}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="libro">
+      <th mat-header-cell *matHeaderCellDef> Libro </th>
+      <td mat-cell *matCellDef="let alquiler"> {{alquiler.nombre}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="alquiler">
+      <th mat-header-cell *matHeaderCellDef> Fecha de alquiler </th>
+      <td mat-cell *matCellDef="let alquiler"> {{alquiler.fecha_alquiler | date: 'yyyy-MM-dd'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="maximaDevolucion">
+      <th mat-header-cell *matHeaderCellDef> Fecha máxima de devolucion </th>
+      <td mat-cell *matCellDef="let alquiler"> {{alquiler.fecha_maxima_devolucion | date: 'yyyy-MM-dd'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="devolucion">
+      <th mat-header-cell *matHeaderCellDef> Fecha de devolcuion </th>
+      <td mat-cell *matCellDef="let alquiler"> {{alquiler.fecha_devolucion | date: 'yyyy-MM-dd'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="remover">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let alquiler">
+        <button mat-button (click)="devolverLibro(alquiler)">
+          <mat-icon>remove</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

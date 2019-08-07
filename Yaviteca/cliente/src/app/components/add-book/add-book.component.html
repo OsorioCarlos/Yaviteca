@@ -1,0 +1,54 @@
+<div style="text-align:center">
+    <h1>AGREGA LIBROS A LA BIBLIOTECA</h1>
+</div>
+<br><br>
+<div class="example-container">
+    <div class="example-container left-container">
+        <mat-form-field>
+            <input matInput placeholder="Código ISBN">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Nombre del libro">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Editorial">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Autor">
+        </mat-form-field>
+    </div>
+
+    <div class="example-container right-container">
+
+        <mat-form-field>
+            <input matInput placeholder="Fecha de publicación(año-mes-día)">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Género">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-select placeholder="Estado de conservación" [(value)]="conservacionSelect">
+                <mat-option *ngFor="let estado of estadosConservacion" [value]="estado.id_estado_conservacion">
+                    {{estado.nombre_estado_conservacion}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm"></div>
+        <div class="col-sm">
+            <button class="btn btn-primary" (click)="agregarLibro()">Agregar</button>
+        </div>
+        <div class="col-sm">
+            <button class="btn btn-primary" routerLink="/inventory">Ver Inventario</button>
+        </div>
+    </div>
+</div>
