@@ -1,2 +1,0 @@
-# Yaviteca
-Proyecto Integrador (Yaviteca)
